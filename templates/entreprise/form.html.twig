@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block body  %}
+
+ <h1 class="m-4">Création d'un nouveau employe</h1>
+
+
+<div class="m-2 border border-primary bg-success text-white">{{ form_start(formEmploye) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.prenom) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.nom) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.email) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.telephone) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.adresse) }}</div>
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.poste) }}</div>
+
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.salaire) }}</div>
+
+
+<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.datedenaissance) }}</div>
+
+
+<button type="submit" class="btn btn-primary mt-2">
+{% if editMode %}
+
+Enregistrer les modification
+{% else %}
+    
+Ajouter un employe
+
+
+{% endif %}
+</button>
+
+{{ form_end(formEmploye) }}
+
+{% endblock %}

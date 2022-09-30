@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<a class="btn btn-success mt-2" href="{{ path('entreprise_new') }}">Ajouter uu nouveau employe</a>
+
+<table class="table">
+	<thead>
+		<tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Telephone</th>
+            <th>E-mail</th>
+            <th>Adresse</th>
+            <th>Poste</th>
+            <th>Salaire</th>
+            <th>Date de Naissance</th>
+        </tr>
+	</thead>
+    <tbody>
+    {% for employe in employes %}
+        
+   
+        <tr class="table-light">
+            <td>{{ employe.prenom }}</td>
+            <td>{{ employe.nom }}</td>
+            <td>{{ employe.telephone }}</td>
+            <td>{{ employe.email }}</td>
+            <td>{{ employe.adresse }}</td>
+            <td>{{ employe.poste }}</td>
+            <td>{{ employe.salaire }}</td>
+            <td>{{ employe.datedenaissance }}</td>
+           
+            <td>
+                <a class="btn btn-primary mt-2" href="{{ path('entreprise_edit', {id: employe.id}) }}">Modifier</a>
+                 <a onclick="return confirm('voulez-vous supprimer cet article?')" class="btn btn-danger mt-2" href="{{ path('entreprise_delete', {id: employe.id})  }}">Supprimer</a>
+            </td>
+        
+        </tr>
+     {% endfor %}    
+  
+    </tbody>
+</table>
+
+{% endblock %}

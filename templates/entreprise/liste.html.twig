@@ -29,7 +29,7 @@
             <td>{{ employe.adresse }}</td>
             <td>{{ employe.poste }}</td>
             <td>{{ employe.salaire }}</td>
-            <td>{{ employe.datedenaissance }}</td>
+            <td>{{ employe.datedenaissance|date('d/m/Y')}}</td>
            
             <td>
                 <a class="btn btn-primary mt-2" href="{{ path('entreprise_edit', {id: employe.id}) }}">Modifier</a>

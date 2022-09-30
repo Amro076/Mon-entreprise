@@ -4,6 +4,7 @@ namespace App\Entity;
 
 
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\EmployeRepository;
 
@@ -36,8 +37,8 @@ class Employe
     #[ORM\Column]
     private ?float $salaire = null;
 
-    #[ORM\Column]
-    private ?int $datedenaissance = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $datedenaissance = null;
 
     public function getId(): ?int
     {
@@ -128,12 +129,12 @@ class Employe
         return $this;
     }
 
-    public function getDatedenaissance(): ?int
+    public function getDatedenaissance(): ?\DateTimeInterface
     {
         return $this->datedenaissance;
     }
 
-    public function setDatedenaissance(int $datedenaissance): self
+    public function setDatedenaissance(\DateTimeInterface $datedenaissance): self
     {
         $this->datedenaissance = $datedenaissance;
 

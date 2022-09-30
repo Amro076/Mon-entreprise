@@ -10,7 +10,7 @@ class EmployeFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        for ($i=1; $i <= 10; $i++) 
+        for ($i=1; $i < 10; $i++) 
         { 
        
         $employe = new Employe;
@@ -22,7 +22,7 @@ class EmployeFixtures extends Fixture
                 ->setAdresse("Adresse $i")
                 ->setPoste("Poste $i")
                 ->setSalaire(" $i")
-                ->setDatedenaissance("$i");
+                ->setDatedenaissance(new \DateTime("01/0$i/2000"));
 
 
         $manager->persist($employe);    

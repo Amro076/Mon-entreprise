@@ -5,25 +5,25 @@
  <h1 class="m-4">Création d'un nouveau employe</h1>
 
 
-<div class="m-2 border border-primary bg-success text-white">{{ form_start(formEmploye) }}</div>
+    {{ form_start(formEmploye) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.prenom) }}</div>
+    {{form_row(formEmploye.prenom) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.nom) }}</div>
+    {{form_row(formEmploye.nom) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.email) }}</div>
+    {{form_row(formEmploye.email) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.telephone) }}</div>
+    {{form_row(formEmploye.telephone) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.adresse) }}</div>
+    {{form_row(formEmploye.adresse) }}
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.poste) }}</div>
-
-
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.salaire) }}</div>
+    {{form_row(formEmploye.poste) }}
 
 
-<div class="m-2 border border-primary bg-success text-white">{{form_row(formEmploye.datedenaissance) }}</div>
+    {{form_row(formEmploye.salaire) }}
+
+
+{{form_row(formEmploye.datedenaissance) }}
 
 
 <button type="submit" class="btn btn-primary mt-2">
